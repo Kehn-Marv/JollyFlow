@@ -31,7 +31,7 @@ export function LegalPage({ title, intro, sections }: LegalPageProps) {
             </section>
           )}
         </div>
-        <p className="mt-12 border-t border-line pt-6 text-sm text-smoke">Last updated for the Hackaholics 7.0 prototype build.</p>
+        <p className="mt-12 border-t border-line pt-6 text-sm text-smoke">Last updated for the prototype build.</p>
       </div>
     </div>);
 

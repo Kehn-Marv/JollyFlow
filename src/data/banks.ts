@@ -1,5 +1,5 @@
 export const banks = [
-{ code: '035', name: 'Wema Bank / ALAT' },
+{ code: '035', name: 'ALAT' },
 { code: '044', name: 'Access Bank' },
 { code: '058', name: 'GTBank' },
 { code: '057', name: 'Zenith Bank' },

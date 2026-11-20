@@ -51,7 +51,7 @@ export function useWallet(owner: string, accountName: string) {
       const entry: WalletTxn = { id: txnId(), kind: 'account_created', amount: 0, bankCode: '035', accountNumber, narration: 'ALAT account generated', createdAt };
       const next: WalletState = {
         ...current,
-        account: { accountNumber, accountName: `JolliFlow / ${accountName}`, bankName: 'ALAT by Wema', createdAt },
+        account: { accountNumber, accountName: `JolliFlow / ${accountName}`, bankName: 'ALAT', createdAt },
         history: [entry, ...current.history]
       };
       save(next);

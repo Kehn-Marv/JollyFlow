@@ -11,7 +11,7 @@ interface BalanceCardProps {
   hidden: boolean;
   onToggleHidden: () => void;
   menu: OverflowMenuItem[];
-  /** Small badge next to the title, e.g. “ALAT by Wema” */
+  /** Small badge next to the title, e.g. “ALAT” */
   badge?: React.ReactNode;
   children?: React.ReactNode;
   footer?: React.ReactNode;

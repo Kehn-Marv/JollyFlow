@@ -5,7 +5,7 @@
  * server-side `PaymentProvider` here. These endpoints do NOT exist yet.
  *
  * Rules for the backend builder:
- * - Never put bank / ALAT / Wema credentials, tokens or signing secrets in browser code.
+ * - Never put bank / ALATPay credentials, tokens or signing secrets in browser code.
  * - Payments are initiated server-side; the browser only receives a reference + status.
  * - A payment is "success" only after server-side verification (e.g. webhook + requery).
  * - All money fields are integer kobo.

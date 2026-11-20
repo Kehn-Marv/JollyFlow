@@ -6,7 +6,7 @@ JolliFlow is a Nigeria-first event planning and operations platform designed to 
 
 Instead of spreading important details across WhatsApp chats, spreadsheets, payment receipts, and separate vendor conversations, JolliFlow brings the moving parts of an event together—and makes it easier to see what is confirmed, what is outstanding, and what needs attention next.
 
-> **Project context:** JolliFlow is being developed for the Wema Bank Hackaholics 7.0 hackathon. The product is designed with a future Wema/ALAT integration in mind. A live banking integration, real-money collection, and production payouts must not be assumed unless they have been separately implemented, tested, and authorised.
+> **Project context:** JolliFlow is a hackathon project. Payments are designed to be powered by ALATPay. A live payment integration, real-money collection, and production payouts must not be assumed unless they have been separately implemented, tested, and authorised.
 
 ---
 
@@ -22,7 +22,7 @@ Instead of spreading important details across WhatsApp chats, spreadsheets, paym
 - [Configuration](#configuration)
 - [Application architecture](#application-architecture)
 - [Key product concepts](#key-product-concepts)
-- [Financial integrity and Wema/ALAT integration](#financial-integrity-and-wemaa-lat-integration)
+- [Financial integrity and ALATPay integration](#financial-integrity-and-alatpay-integration)
 - [Security and privacy](#security-and-privacy)
 - [Testing and quality checks](#testing-and-quality-checks)
 - [Roadmap](#roadmap)
@@ -114,7 +114,7 @@ Depending on the current build, some workflows may use seeded demonstration data
 - Browser-local data may be specific to the browser or device and may be cleared when demo data is reset.
 - An upload preview does not necessarily mean a file has been permanently stored on a server.
 
-The application should clearly label simulated activity and should never describe a mock transaction as a completed Wema/ALAT transaction.
+The application should clearly label simulated activity and should never describe a mock transaction as a completed ALATPay transaction.
 
 ## Getting started
 
@@ -192,7 +192,7 @@ Typical future configuration categories may include:
 | Demo mode | Enables seeded/local demonstration behaviour when supported |
 | Database URL | Server-side database connection, required only for the backend |
 | Session/authentication settings | Server-side authentication configuration, required only for the backend |
-| Wema/ALAT test credentials | Server-side integration credentials, only when the relevant API product and access have been confirmed |
+| ALATPay test credentials | Server-side integration credentials, only when the relevant API product and access have been confirmed |
 | Object-storage configuration | Server-side media storage, if the backend uses an object-storage provider |
 
 These are configuration categories, not a claim that every variable is currently implemented. Use the exact variable names found in the application.
@@ -208,7 +208,7 @@ The frontend should separate visual components from product rules and data acces
 - **Service interfaces:** stable operations used by the UI to retrieve or modify application data.
 - **Demo service adapter:** seeded data and local demonstration behaviour.
 - **API service adapter:** future connection to the authenticated backend.
-- **Banking-provider adapter:** backend-only integration for the specific Wema/ALAT capabilities authorised for the project.
+- **Payment-provider adapter:** backend-only integration for the specific ALATPay capabilities authorised for the project.
 
 The frontend should not directly perform privileged banking operations. The backend must validate user permissions, verify provider responses, and authoritatively manage transaction state.
 
@@ -235,11 +235,9 @@ A reliable event platform needs to keep several related concepts distinct:
 
 These distinctions prevent a pending payment from being counted as paid, an RSVP from being treated as attendance, or a vendor profile from being confused with a confirmed booking.
 
-## Financial integrity and Wema/ALAT integration
+## Financial integrity and ALATPay integration
 
-JolliFlow is designed with a future integration path for approved Wema/ALAT banking capabilities. The integration must be based on the specific official API product, documentation, credentials, permissions, and use case available to the project.
-
-Official developer portal: <https://wema-alatdev-apimgt.developer.azure-api.net/>
+JolliFlow payments are designed to be powered by ALATPay. The integration must be based on the specific official API product, documentation, credentials, permissions, and use case available to the project.
 
 The existence of an account, transfer, payment, or payout API does not automatically mean it can be used for every collection, checkout, refund, or merchant-settlement workflow. Those capabilities must be checked individually.
 
@@ -248,7 +246,7 @@ Until a specific flow has been implemented and verified:
 - Treat demo payments as simulated.
 - Do not claim that money has moved based on a frontend success message.
 - Do not expose banking credentials in browser code.
-- Do not claim a formal Wema Bank partnership or endorsement without authorisation.
+- Do not claim a formal ALATPay partnership or endorsement without authorisation.
 - Keep payment collection, payment verification, payouts, and refunds distinct.
 
 When the backend is added, the server should verify payment status through the authorised provider flow, safely process duplicate or delayed callbacks, retain transaction references, and maintain an auditable financial record.
@@ -303,7 +301,7 @@ The roadmap may change as the team validates the highest-value workflows.
 - Add transactional workflows, audit history, and automated tests.
 
 ### Stage 3 — Approved financial integration
-- Confirm the exact Wema/ALAT APIs and access available to the team.
+- Confirm the exact ALATPay APIs and access available to the team.
 - Implement only supported and authorised collection, verification, or payout flows.
 - Add idempotency, reconciliation, failure handling, and secure callback processing.
 - Test in the provider's approved environment before considering production use.
@@ -328,6 +326,6 @@ Recommended workflow:
 
 ## Disclaimer
 
-JolliFlow is an independent project developed for a hackathon context. It is not an official Wema Bank or ALAT product, and no partnership or endorsement should be implied unless formally authorised. Banking and payment functionality is subject to the actual provider products, approvals, agreements, and integrations available to the team.
+JolliFlow is an independent project developed for a hackathon context. It is not an official ALATPay product, and no partnership or endorsement should be implied unless formally authorised. Banking and payment functionality is subject to the actual provider products, approvals, agreements, and integrations available to the team.
 
 **JolliFlow — every event. One clear plan.**

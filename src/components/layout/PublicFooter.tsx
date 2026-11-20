@@ -43,7 +43,7 @@ export function PublicFooter() {
           <p className="select-none whitespace-nowrap pb-[0.2em] font-display text-[19vw] font-bold leading-[0.95] tracking-tighter text-white/[0.06] lg:text-[13rem]">jolliflow</p>
         </div>
         <div className="mt-6 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-paper/50 sm:flex-row sm:justify-between">
-          <p>© {new Date().getFullYear()} JolliFlow. Built for Hackaholics 7.0.</p>
+          <p>© {new Date().getFullYear()} JolliFlow.</p>
           <p>Made in Nigeria · Amounts shown in NGN</p>
         </div>
       </div>

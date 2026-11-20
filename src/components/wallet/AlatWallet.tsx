@@ -81,7 +81,7 @@ export function AlatWallet({ owner, accountName }: AlatWalletProps) {
         </Button>
       </section>
 
-      <p className="text-xs text-smoke lg:col-span-2">Prototype: account generation and transfers are simulated and stored only in this browser. Not affiliated with or endorsed by Wema Bank.</p>
+      <p className="text-xs text-smoke lg:col-span-2">Prototype: account generation and transfers are simulated and stored only in this browser.</p>
 
       <PinDialog
         open={pinOpen}
